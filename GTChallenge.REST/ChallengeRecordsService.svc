@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="GTChallenge.REST.ChallengeRecordsService" CodeBehind="ChallengeRecordsService.svc.cs" %>
