@@ -17,7 +17,7 @@ namespace GTChallenge.Code.Test
             public void Init()
             {
                   _testdatabed = new Dictionary<string, string[]>();
-                  _testdatabed["MissingGenderFieldValue"] = new[] {"Barrett", "Glenn", "", "10/20/2013 ", "Tatoos"};
+                  _testdatabed["MissingGenderFieldValue"] = new[] { "Barrett", "Glenn", "", "10/20/2013 ", "BambooTrees" };
                   _testdatabed["MissingFavoriteFieldValue"] = new[] {"LeSage", "Buck", "Male", "1-24-1977 ", ""};
                   _testdatabed["MissingLastNameFieldValue"] = new[] {"", "Randy", "Male", "01-22-1980 ", "Tatoos"};
                   _testdatabed["MissingFirstNameFieldValue"] = new[] {"Small", "", "Male", "08/24/2000 ", "Tatoos"};
