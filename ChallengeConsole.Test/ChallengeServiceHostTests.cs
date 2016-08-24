@@ -39,5 +39,12 @@ namespace GTChallenge.Code.Test
                   result = _serviceHost.State == CommunicationState.Closed ? null : result;
                   Assert.AreSame(null, result);
             }
+
+            [TestCleanup]
+            public void Cleanup()
+            {
+                  if(_serviceHost !=null)
+                        _serviceHost.Stop();
+            }
       }
 }
