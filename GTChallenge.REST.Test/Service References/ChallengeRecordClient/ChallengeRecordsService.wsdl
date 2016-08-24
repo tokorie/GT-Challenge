@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+                  xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/"
+                  xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+                  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+                  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ChallengeRecordsService"
+                  targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+      <wsdl:types>
+            <xsd:schema targetNamespace="http://tempuri.org/Imports">
+                  <xsd:import schemaLocation="http://localhost:7360/ChallengeRecordsService.svc?xsd=xsd0"
+                              namespace="http://tempuri.org/" />
+                  <xsd:import schemaLocation="http://localhost:7360/ChallengeRecordsService.svc?xsd=xsd2"
+                              namespace="http://schemas.datacontract.org/2004/07/GTChallenge.REST" />
+                  <xsd:import schemaLocation="http://localhost:7360/ChallengeRecordsService.svc?xsd=xsd1"
+                              namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  <xsd:import schemaLocation="http://localhost:7360/ChallengeRecordsService.svc?xsd=xsd3"
+                              namespace="http://schemas.datacontract.org/2004/07/GTChallenge.Code" />
+            </xsd:schema>
+      </wsdl:types>
+      <wsdl:message name="IChallengeRecordsService_PostRecord_InputMessage">
+            <wsdl:part name="parameters" element="tns:PostRecord" />
+      </wsdl:message>
+      <wsdl:message name="IChallengeRecordsService_PostRecord_OutputMessage">
+            <wsdl:part name="parameters" element="tns:PostRecordResponse" />
+      </wsdl:message>
+      <wsdl:message name="IChallengeRecordsService_PostRecord_RecordFaultFault_FaultMessage">
+            <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/GTChallenge.REST" name="detail"
+                       element="q1:RecordFault" />
+      </wsdl:message>
+      <wsdl:message name="IChallengeRecordsService_GetRecordsByGender_InputMessage">
+            <wsdl:part name="parameters" element="tns:GetRecordsByGender" />
+      </wsdl:message>
+      <wsdl:message name="IChallengeRecordsService_GetRecordsByGender_OutputMessage">
+            <wsdl:part name="parameters" element="tns:GetRecordsByGenderResponse" />
+      </wsdl:message>
+      <wsdl:message name="IChallengeRecordsService_GetRecordsByGender_RecordFaultFault_FaultMessage">
+            <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/GTChallenge.REST" name="detail"
+                       element="q2:RecordFault" />
+      </wsdl:message>
+      <wsdl:message name="IChallengeRecordsService_GetRecordsByBirthDate_InputMessage">
+            <wsdl:part name="parameters" element="tns:GetRecordsByBirthDate" />
+      </wsdl:message>
+      <wsdl:message name="IChallengeRecordsService_GetRecordsByBirthDate_OutputMessage">
+            <wsdl:part name="parameters" element="tns:GetRecordsByBirthDateResponse" />
+      </wsdl:message>
+      <wsdl:message name="IChallengeRecordsService_GetRecordsByBirthDate_RecordFaultFault_FaultMessage">
+            <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/GTChallenge.REST" name="detail"
+                       element="q3:RecordFault" />
+      </wsdl:message>
+      <wsdl:message name="IChallengeRecordsService_GetRecordsByName_InputMessage">
+            <wsdl:part name="parameters" element="tns:GetRecordsByName" />
+      </wsdl:message>
+      <wsdl:message name="IChallengeRecordsService_GetRecordsByName_OutputMessage">
+            <wsdl:part name="parameters" element="tns:GetRecordsByNameResponse" />
+      </wsdl:message>
+      <wsdl:message name="IChallengeRecordsService_GetRecordsByName_RecordFaultFault_FaultMessage">
+            <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/GTChallenge.REST" name="detail"
+                       element="q4:RecordFault" />
+      </wsdl:message>
+      <wsdl:portType name="IChallengeRecordsService">
+            <wsdl:operation name="PostRecord">
+                  <wsdl:input wsaw:Action="http://tempuri.org/IChallengeRecordsService/PostRecord"
+                              message="tns:IChallengeRecordsService_PostRecord_InputMessage" />
+                  <wsdl:output wsaw:Action="http://tempuri.org/IChallengeRecordsService/PostRecordResponse"
+                               message="tns:IChallengeRecordsService_PostRecord_OutputMessage" />
+                  <wsdl:fault wsaw:Action="http://tempuri.org/IChallengeRecordsService/PostRecordRecordFaultFault"
+                              name="RecordFaultFault"
+                              message="tns:IChallengeRecordsService_PostRecord_RecordFaultFault_FaultMessage" />
+            </wsdl:operation>
+            <wsdl:operation name="GetRecordsByGender">
+                  <wsdl:input wsaw:Action="http://tempuri.org/IChallengeRecordsService/GetRecordsByGender"
+                              message="tns:IChallengeRecordsService_GetRecordsByGender_InputMessage" />
+                  <wsdl:output wsaw:Action="http://tempuri.org/IChallengeRecordsService/GetRecordsByGenderResponse"
+                               message="tns:IChallengeRecordsService_GetRecordsByGender_OutputMessage" />
+                  <wsdl:fault
+                        wsaw:Action="http://tempuri.org/IChallengeRecordsService/GetRecordsByGenderRecordFaultFault"
+                        name="RecordFaultFault"
+                        message="tns:IChallengeRecordsService_GetRecordsByGender_RecordFaultFault_FaultMessage" />
+            </wsdl:operation>
+            <wsdl:operation name="GetRecordsByBirthDate">
+                  <wsdl:input wsaw:Action="http://tempuri.org/IChallengeRecordsService/GetRecordsByBirthDate"
+                              message="tns:IChallengeRecordsService_GetRecordsByBirthDate_InputMessage" />
+                  <wsdl:output wsaw:Action="http://tempuri.org/IChallengeRecordsService/GetRecordsByBirthDateResponse"
+                               message="tns:IChallengeRecordsService_GetRecordsByBirthDate_OutputMessage" />
+                  <wsdl:fault
+                        wsaw:Action="http://tempuri.org/IChallengeRecordsService/GetRecordsByBirthDateRecordFaultFault"
+                        name="RecordFaultFault"
+                        message="tns:IChallengeRecordsService_GetRecordsByBirthDate_RecordFaultFault_FaultMessage" />
+            </wsdl:operation>
+            <wsdl:operation name="GetRecordsByName">
+                  <wsdl:input wsaw:Action="http://tempuri.org/IChallengeRecordsService/GetRecordsByName"
+                              message="tns:IChallengeRecordsService_GetRecordsByName_InputMessage" />
+                  <wsdl:output wsaw:Action="http://tempuri.org/IChallengeRecordsService/GetRecordsByNameResponse"
+                               message="tns:IChallengeRecordsService_GetRecordsByName_OutputMessage" />
+                  <wsdl:fault
+                        wsaw:Action="http://tempuri.org/IChallengeRecordsService/GetRecordsByNameRecordFaultFault"
+                        name="RecordFaultFault"
+                        message="tns:IChallengeRecordsService_GetRecordsByName_RecordFaultFault_FaultMessage" />
+            </wsdl:operation>
+      </wsdl:portType>
+      <wsdl:binding name="BasicHttpBinding_IChallengeRecordsService" type="tns:IChallengeRecordsService">
+            <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+            <wsdl:operation name="PostRecord">
+                  <soap:operation soapAction="http://tempuri.org/IChallengeRecordsService/PostRecord" style="document" />
+                  <wsdl:input>
+                        <soap:body use="literal" />
+                  </wsdl:input>
+                  <wsdl:output>
+                        <soap:body use="literal" />
+                  </wsdl:output>
+                  <wsdl:fault name="RecordFaultFault">
+                        <soap:fault use="literal" name="RecordFaultFault" namespace="" />
+                  </wsdl:fault>
+            </wsdl:operation>
+            <wsdl:operation name="GetRecordsByGender">
+                  <soap:operation soapAction="http://tempuri.org/IChallengeRecordsService/GetRecordsByGender"
+                                  style="document" />
+                  <wsdl:input>
+                        <soap:body use="literal" />
+                  </wsdl:input>
+                  <wsdl:output>
+                        <soap:body use="literal" />
+                  </wsdl:output>
+                  <wsdl:fault name="RecordFaultFault">
+                        <soap:fault use="literal" name="RecordFaultFault" namespace="" />
+                  </wsdl:fault>
+            </wsdl:operation>
+            <wsdl:operation name="GetRecordsByBirthDate">
+                  <soap:operation soapAction="http://tempuri.org/IChallengeRecordsService/GetRecordsByBirthDate"
+                                  style="document" />
+                  <wsdl:input>
+                        <soap:body use="literal" />
+                  </wsdl:input>
+                  <wsdl:output>
+                        <soap:body use="literal" />
+                  </wsdl:output>
+                  <wsdl:fault name="RecordFaultFault">
+                        <soap:fault use="literal" name="RecordFaultFault" namespace="" />
+                  </wsdl:fault>
+            </wsdl:operation>
+            <wsdl:operation name="GetRecordsByName">
+                  <soap:operation soapAction="http://tempuri.org/IChallengeRecordsService/GetRecordsByName"
+                                  style="document" />
+                  <wsdl:input>
+                        <soap:body use="literal" />
+                  </wsdl:input>
+                  <wsdl:output>
+                        <soap:body use="literal" />
+                  </wsdl:output>
+                  <wsdl:fault name="RecordFaultFault">
+                        <soap:fault use="literal" name="RecordFaultFault" namespace="" />
+                  </wsdl:fault>
+            </wsdl:operation>
+      </wsdl:binding>
+      <wsdl:service name="ChallengeRecordsService">
+            <wsdl:port name="BasicHttpBinding_IChallengeRecordsService"
+                       binding="tns:BasicHttpBinding_IChallengeRecordsService">
+                  <soap:address location="http://localhost:7360/ChallengeRecordsService.svc" />
+            </wsdl:port>
+      </wsdl:service>
+</wsdl:definitions>

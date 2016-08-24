@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import schemaLocation="http://localhost:7360/ChallengeRecordsService.svc?xsd=xsd3"
+                 namespace="http://schemas.datacontract.org/2004/07/GTChallenge.Code" />
+      <xs:element name="PostRecord">
+            <xs:complexType>
+                  <xs:sequence>
+                        <xs:element minOccurs="0" name="dataline" nillable="true" type="xs:string" />
+                  </xs:sequence>
+            </xs:complexType>
+      </xs:element>
+      <xs:element name="PostRecordResponse">
+            <xs:complexType>
+                  <xs:sequence>
+                        <xs:element minOccurs="0" name="PostRecordResult" type="xs:boolean" />
+                  </xs:sequence>
+            </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRecordsByGender">
+            <xs:complexType>
+                  <xs:sequence />
+            </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRecordsByGenderResponse">
+            <xs:complexType>
+                  <xs:sequence>
+                        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GTChallenge.Code" minOccurs="0"
+                                    name="GetRecordsByGenderResult" nillable="true" type="q1:ArrayOfRecordItem" />
+                  </xs:sequence>
+            </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRecordsByBirthDate">
+            <xs:complexType>
+                  <xs:sequence />
+            </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRecordsByBirthDateResponse">
+            <xs:complexType>
+                  <xs:sequence>
+                        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GTChallenge.Code" minOccurs="0"
+                                    name="GetRecordsByBirthDateResult" nillable="true" type="q2:ArrayOfRecordItem" />
+                  </xs:sequence>
+            </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRecordsByName">
+            <xs:complexType>
+                  <xs:sequence />
+            </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRecordsByNameResponse">
+            <xs:complexType>
+                  <xs:sequence>
+                        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GTChallenge.Code" minOccurs="0"
+                                    name="GetRecordsByNameResult" nillable="true" type="q3:ArrayOfRecordItem" />
+                  </xs:sequence>
+            </xs:complexType>
+      </xs:element>
+</xs:schema>

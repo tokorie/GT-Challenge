@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9ce446a7-4b49-442d-8d58-f4ab60451ec6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:7360/ChallengeRecordsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ChallengeRecordsService.xsd" MetadataType="Schema" ID="0e0e6397-890f-48b6-9205-cf6cfc323393" SourceId="1" SourceUrl="http://localhost:7360/ChallengeRecordsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ChallengeRecordsService.wsdl" MetadataType="Wsdl" ID="edf91fa5-0e26-4b20-aa88-aabba7a9c1be" SourceId="1" SourceUrl="http://localhost:7360/ChallengeRecordsService.svc?wsdl" />
+    <MetadataFile FileName="ChallengeRecordsService.disco" MetadataType="Disco" ID="147289aa-667c-44d2-88bb-d31d92b7d869" SourceId="1" SourceUrl="http://localhost:7360/ChallengeRecordsService.svc?disco" />
+    <MetadataFile FileName="ChallengeRecordsService1.xsd" MetadataType="Schema" ID="f07d578b-a3cf-4382-b0ae-f31a31432dc0" SourceId="1" SourceUrl="http://localhost:7360/ChallengeRecordsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ChallengeRecordsService2.xsd" MetadataType="Schema" ID="55a20603-fb3c-4575-99da-bcb8cbb4be8c" SourceId="1" SourceUrl="http://localhost:7360/ChallengeRecordsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ChallengeRecordsService3.xsd" MetadataType="Schema" ID="81960156-4789-4f4f-89c1-56650deb8920" SourceId="1" SourceUrl="http://localhost:7360/ChallengeRecordsService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
