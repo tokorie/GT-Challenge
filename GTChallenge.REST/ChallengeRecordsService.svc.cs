@@ -11,12 +11,24 @@ namespace GTChallenge.REST
       /// </summary>
       public class ChallengeRecordsService : IChallengeRecordsService
       {
+            private static ChallengeRecordsManagerClient _challengerecordsmanagerClient; 
+             static ChallengeRecordsService()
+            {
+                  _challengerecordsmanagerClient = new ChallengeRecordsManagerClient();
+            }
+
+            private static ChallengeRecordsManagerClient  GetInstance()
+             {
+                   if (_challengerecordsmanagerClient == null)
+                         _challengerecordsmanagerClient = new ChallengeRecordsManagerClient();
+                                       return _challengerecordsmanagerClient;
+             }
             public bool PostRecord(string dataline)
             {
-                  var result = false;
+                  bool result;
                   try
                   {
-                        var managerclient = new ChallengeRecordsManagerClient();
+                        var managerclient = GetInstance();
                         result = managerclient.AppendRecord(dataline);
                   }
                   catch (Exception e)
@@ -35,7 +47,7 @@ namespace GTChallenge.REST
                   List<RecordItem> gendersortedrecords;
                   try
                   {
-                        var manager = new ChallengeRecordsManagerClient();
+                        var manager =  GetInstance();
                         gendersortedrecords =
                               manager.GetRecords()
                                     .AsEnumerable()
@@ -60,7 +72,7 @@ namespace GTChallenge.REST
                   List<RecordItem> birthdatesortedresults;
                   try
                   {
-                        var managerclient = new ChallengeRecordsManagerClient();
+                        var managerclient = GetInstance();
                         birthdatesortedresults = managerclient.GetRecords().OrderBy(x => x.Dateofbirth).ToList();
                   }
                   catch (Exception e)
@@ -79,7 +91,7 @@ namespace GTChallenge.REST
                   List<RecordItem> nameSortedRecords;
                   try
                   {
-                        var managerclient = new ChallengeRecordsManagerClient();
+                        var managerclient =  GetInstance();
                         nameSortedRecords =
                               managerclient.GetRecords()
                                     .AsQueryable()
