@@ -36,10 +36,8 @@ namespace GTChallenge.Code
             /// <returns>true if operation succeed, else false</returns>
             public bool AppendRecord(string dataline)
             {
-                  var result = false;
                   var splitarray = dataline.Split(_delimiters.Select(c => Convert.ToChar(c)).ToArray());
                   _records.Add(new RecordItem(splitarray));
-                  result = true;
 
                   return true;
             }

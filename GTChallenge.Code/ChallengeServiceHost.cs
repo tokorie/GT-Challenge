@@ -38,11 +38,6 @@ namespace GTChallenge.Code
                   _tcpBaseAddress = new Uri("net.tcp://localhost:8020/");
                   BaseAddress = _tcpBaseAddress;
             }
-             
-            public void Dispose()
-            {
-                  throw new NotImplementedException();
-            }
 
             /// <summary>
             ///       1.Create a ServiceHost for the IChallengeRecordsManager type and  provide the base address.
@@ -52,6 +47,7 @@ namespace GTChallenge.Code
             public void Start(IChallengeRecordsManager manager)
             {
                   Console.WriteLine("Starting Console Service");
+                  
                   _svchost = new ServiceHost(manager, _tcpBaseAddress);
                   _svchost.AddServiceEndpoint(typeof(IChallengeRecordsManager), new NetTcpBinding(), "");
                   var metadataBehavior = _svchost.Description.Behaviors.Find<ServiceMetadataBehavior>();
