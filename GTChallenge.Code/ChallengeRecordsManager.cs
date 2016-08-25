@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.ServiceModel;
@@ -9,16 +10,19 @@ namespace GTChallenge.Code
       /// <summary>
       ///       Implementation of file record manager service as a singleton service with concurrency enabled
       /// </summary>
-      [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
-      public class ChallengeRecordsManager : IChallengeRecordsManager
+      [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single,  ConcurrencyMode = ConcurrencyMode.Multiple)]
+      public class ChallengeRecordsManager : IChallengeRecordsManager, IDisposable
       {
-            private static List<RecordItem> _records;
-            private static List<int> _delimiters;
+            private  List<RecordItem> _records;
+            private  List<int> _delimiters;
+           private int _instancecounter = 0;
 
             public ChallengeRecordsManager()
             {
                   _records = new List<RecordItem>();
                   _delimiters = new List<int>();
+                  _instancecounter++;
+                  Trace.WriteLine("Singleton Service constructor called");
             }
 
             public ChallengeRecordsManager(params char[] delimiters)
@@ -104,6 +108,12 @@ namespace GTChallenge.Code
                         outstream.WriteLine(recorditem.Print());
                   outstream.WriteLine();
                   outstream.WriteLine();
+            }
+
+            public void Dispose()
+            {
+                  Trace.WriteLine(_instancecounter);
+                  Trace.WriteLine("Disposing of Singleton Service initiated");
             }
       }
 }
