@@ -27,9 +27,9 @@ namespace GTChallenge.REST.Test
             }
 
             [TestCleanup]
-            public void clean()
+            public void Clean()
             {
-                  if (_challengerrecordclient != null)
+                  if (GTChallenge.REST.Test.GtChallengeRestTest._challengerrecordclient != null)
                         _challengerrecordclient = null;
             }
             public ChallengeRecordsServiceClient getInstance()
