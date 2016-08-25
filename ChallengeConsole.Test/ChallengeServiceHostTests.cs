@@ -14,7 +14,10 @@ namespace GTChallenge.Code.Test
             [TestInitialize]
             public void Initialize()
             {
+                  if (_serviceHost != null) return;
+                  var challengerecordService = new ChallengeRecordsManager();
                   _serviceHost = new ChallengeServiceHost();
+                  _serviceHost.Start(challengerecordService);
             }
 
             [TestMethod]
@@ -26,10 +29,9 @@ namespace GTChallenge.Code.Test
 
             private void when_challenge_service_start_and_opened_then_reference_to_instancecontext_is_not_null_test()
             {
-                  var expected = new ChallengeRecordsManager();
-                  _serviceHost.Start(expected);
+                   
                   var result = _serviceHost.SingletonInstance;
-                  Assert.AreSame(expected, result);
+                  Assert.IsNotNull(result);
             }
 
             private void when_challenge_service_stopped_and_state_is_closed_then_access_to_instanceconstext_is_null_test()

@@ -11,7 +11,13 @@ namespace GTChallenge.Code.Test
       public class RecordItemTest
       {
             private Dictionary<string, string[]> _testdatabed;
-            public TestContext TestContext { get; set; }
+
+            //public RecordItemTest(TestContext testContext)
+            //{
+            //      TestContext = testContext;
+            //}
+
+            //private TestContext TestContext { get; set; }
 
             [TestInitialize]
             public void Init()

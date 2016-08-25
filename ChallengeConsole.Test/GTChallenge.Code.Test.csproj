@@ -54,7 +54,7 @@
   <ItemGroup>
     <Compile Include="ChallengeRecordsManagerTests.cs" />
     <Compile Include="ChallengeServiceHostTests.cs" />
-    <Compile Include="RecordItemTests.cs" />
+    <Compile Include="RecordItemTest.cs" />
     <Compile Include="ConsoleAppTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
